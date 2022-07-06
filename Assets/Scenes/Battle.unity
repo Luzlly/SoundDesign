@@ -701,6 +701,8 @@ MonoBehaviour:
   enemyAnimator: {fileID: 969045398}
   playerAtkSnd: {fileID: 8300000, guid: c60267c44587f32459840f4e9098669c, type: 3}
   enemyAtkSnd: {fileID: 8300000, guid: e05a048607ec78c4d9a01bbcf88123c2, type: 3}
+  enemydeathSnd: {fileID: 8300000, guid: fe39033703abf394bb29cc59de40458f, type: 3}
+  loseSnd: {fileID: 8300000, guid: e99193576174c6a4393a6ca535214b67, type: 3}
   audioSource: {fileID: 218909807}
 --- !u!1 &257302816
 GameObject:
