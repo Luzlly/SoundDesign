@@ -848,6 +848,8 @@ MonoBehaviour:
   enemyMaxHP: 0
   enemyAtk: 0
   upgradeSnd: {fileID: 8300000, guid: 3efab876749e6b844832a5024b33554c, type: 3}
+  loseSnd: {fileID: 8300000, guid: e99193576174c6a4393a6ca535214b67, type: 3}
+  winSnd: {fileID: 0}
   audioSource: {fileID: 529424644}
 --- !u!4 &529424643
 Transform:
@@ -2998,7 +3000,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

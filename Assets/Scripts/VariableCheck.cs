@@ -14,12 +14,24 @@ public class VariableCheck : MonoBehaviour
     public int enemyAtk;
 
     public AudioClip upgradeSnd;
+    public AudioClip loseSnd;
+    //public AudioClip winSnd;
     public AudioSource audioSource;
 
     // Start is called before the first frame update
     public void Start()
     {
         InitializeVariables();
+    }
+
+    public void LoseSound()
+    {
+        audioSource.PlayOneShot(loseSnd);
+    }
+
+    public void WinSound()
+    {
+       // audioSource.PlayOneShot(winSnd);
     }
 
     public void InitializeVariables()

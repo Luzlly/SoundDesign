@@ -40,7 +40,7 @@ public class BattleStart : MonoBehaviour
 
     public AudioClip playerAtkSnd;
     public AudioClip enemyAtkSnd;
-    //public AudioClip deathSnd;
+    public AudioClip enemydeathSnd;
     public AudioSource audioSource;
 
     public void Start()
@@ -126,7 +126,7 @@ public class BattleStart : MonoBehaviour
             actionText.text = "Player Attacked for " + playerPower;
             enemyHealthBar.SetHealth(enemyHealth);
             enemyHealthText.text = enemyHealth.ToString() + "/" + enemyMaxHealth.ToString();
-            audioSource.PlayOneShot(playerAtkSnd, 0.7F);
+            audioSource.PlayOneShot(playerAtkSnd);
             Debug.Log("Player Attacked for " + playerPower);
         }
     }
@@ -190,7 +190,7 @@ public class BattleStart : MonoBehaviour
         playerHealthText.text = playerHealth.ToString() + "/" + playerMaxHealth.ToString();
         StartCoroutine(WaitForPlayerTurn());
         actionText.text = "Enemy Attacked for " + varCheck.enemyAtk.ToString();
-        audioSource.PlayOneShot(enemyAtkSnd, 0.7F);
+        audioSource.PlayOneShot(enemyAtkSnd);
         Debug.Log("Enemy Attacked");
     }
 
@@ -233,7 +233,8 @@ public class BattleStart : MonoBehaviour
         print("Game Lost!");
         actionText.text = "Game Lost at Level " + varCheck.sceneNum.ToString();
         Debug.Log("Enemy Health: " + enemyHealth);
-        //audioSource.PlayOneShot(deathSnd, 0.7F);
+        //audioSource.PlayOneShot(deathSnd);
+        varCheck.LoseSound();
         this.enabled = false;
         StartCoroutine(WaitForGameOver());
     }
@@ -244,7 +245,7 @@ public class BattleStart : MonoBehaviour
         print("Fight Won!");
         actionText.text = "Fight Won";
         Debug.Log("Player Health: " + playerHealth);
-        //audioSource.PlayOneShot(deathSnd, 0.7F);
+        audioSource.PlayOneShot(enemydeathSnd);
         this.enabled = false;
 
         if (varCheck.sceneNum % 2 == 0)
