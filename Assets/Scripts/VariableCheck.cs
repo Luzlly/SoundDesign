@@ -14,7 +14,7 @@ public class VariableCheck : MonoBehaviour
     public int enemyAtk;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         InitializeVariables();
     }
@@ -29,7 +29,7 @@ public class VariableCheck : MonoBehaviour
         enemyAtk = 5;
     }
 
-        private void Awake()
+    public void Awake()
     {
         UnityEngine.Object.DontDestroyOnLoad(this);
     }
@@ -42,5 +42,24 @@ public class VariableCheck : MonoBehaviour
     public void Destroy()
     {
         Destroy(gameObject);
+    }
+
+    public void SavePlayer()
+    {
+        SaveSystem.SavePlayer(this);
+    }
+
+    public void LoadPlayer()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+
+        upgMH = data.playerMaxHP;
+        upgHeal = data.playerHeal;
+        upgAtk = data.playerAtk;
+        sceneNum = data.level;
+        enemyMaxHP = data.enemyMaxHP;
+        enemyAtk = data.enemyAtk;
+
+        SceneManager.LoadScene("Battle");
     }
 }
