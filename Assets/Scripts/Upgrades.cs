@@ -19,21 +19,23 @@ public class Upgrades : MonoBehaviour
     public void MaxHealth()
     {
         varCheck.upgMH += 5;
-        SceneManager.LoadScene("Battle");
+        varCheck.PlayGame();
         Debug.Log("Loaded Scene: " + varCheck.sceneNum);
     }
 
     public void Healing()
     {
         varCheck.upgHeal += 5;
-        SceneManager.LoadScene("Battle");
+        varCheck.PlayGame();
+        Debug.Log("Loaded Scene: " + varCheck.sceneNum);
     }
 
     public void Attack()
     {
         varCheck.upgAtk += 2;
         Debug.Log("Increased Atk by 2, It is now" + varCheck.upgAtk);
-        SceneManager.LoadScene("Battle");
+        varCheck.PlayGame();
+        Debug.Log("Loaded Scene: " + varCheck.sceneNum);
     }
 
 

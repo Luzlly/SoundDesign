@@ -13,6 +13,9 @@ public class VariableCheck : MonoBehaviour
     public int enemyMaxHP;
     public int enemyAtk;
 
+    public AudioClip upgradeSnd;
+    public AudioSource audioSource;
+
     // Start is called before the first frame update
     public void Start()
     {
@@ -36,6 +39,10 @@ public class VariableCheck : MonoBehaviour
 
     public void PlayGame()
     {
+        if(sceneNum != 1)
+        {
+            audioSource.PlayOneShot(upgradeSnd, 0.7F);
+        }
         SceneManager.LoadScene("Battle");
     }
 
