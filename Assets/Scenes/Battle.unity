@@ -699,9 +699,8 @@ MonoBehaviour:
   buttonHealText: {fileID: 1994822423}
   playerAnimator: {fileID: 1199175202}
   enemyAnimator: {fileID: 969045398}
-  playerAtkSnd: {fileID: 8300000, guid: cc92a152ff78ceb4e88fa0f05fbba47c, type: 3}
-  enemyAtkSnd: {fileID: 8300000, guid: 68cac6b367faa154582bdfa0a2945cdf, type: 3}
-  deathSnd: {fileID: 8300000, guid: 0c9e1f87586512940be9006930f1b042, type: 3}
+  playerAtkSnd: {fileID: 8300000, guid: a5198b6a5a5ddf94b8db1f851c1aaf68, type: 3}
+  enemyAtkSnd: {fileID: 8300000, guid: e05a048607ec78c4d9a01bbcf88123c2, type: 3}
   audioSource: {fileID: 218909807}
 --- !u!1 &257302816
 GameObject:
