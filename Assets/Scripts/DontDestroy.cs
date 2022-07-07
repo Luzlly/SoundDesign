@@ -18,7 +18,7 @@ public class DontDestroy : MonoBehaviour
 
     public void LowerVolume()
     {
-        audioSource.volume = 0.1f;
+        audioSource.volume = 0.2f;
     }
 
     public void ResetVolume()

@@ -54,6 +54,9 @@ public class BattleStart : MonoBehaviour
         enemyAtking = true;
 
         varCheck = GameObject.Find("Variables").GetComponent<VariableCheck>(); //Establishes Connection with Variables Script
+        music = GameObject.Find("Music").GetComponent<DontDestroy>(); //Establishes Connection with Music Script
+
+        music.ResetVolume();
 
         // Initialising Variables
         playerMaxHealth = 20 + varCheck.upgMH;
@@ -238,7 +241,8 @@ public class BattleStart : MonoBehaviour
         print("Game Lost!");
         actionText.text = "Game Lost at Level " + varCheck.sceneNum.ToString();
         Debug.Log("Enemy Health: " + enemyHealth);
-        audioSource.PlayOneShot(playerDeathSnd);;
+        audioSource.PlayOneShot(playerDeathSnd);
+        music.LowerVolume();
         this.enabled = false;
         StartCoroutine(WaitForGameOver());
     }
