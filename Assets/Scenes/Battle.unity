@@ -703,6 +703,7 @@ MonoBehaviour:
   enemyAtkSnd: {fileID: 8300000, guid: e05a048607ec78c4d9a01bbcf88123c2, type: 3}
   playerDeathSnd: {fileID: 8300000, guid: 02504679690627248afb0c5bb4c1d091, type: 3}
   enemyDeathSnd: {fileID: 8300000, guid: eb256652fd26fac4aa8b02640cd1f42b, type: 3}
+  charHealSnd: {fileID: 8300000, guid: d20501054661ce64cad622d0fa9bb1bb, type: 3}
   audioSource: {fileID: 218909807}
 --- !u!1 &257302816
 GameObject:

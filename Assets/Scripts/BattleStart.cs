@@ -42,6 +42,7 @@ public class BattleStart : MonoBehaviour
     public AudioClip enemyAtkSnd;
     public AudioClip playerDeathSnd;
     public AudioClip enemyDeathSnd;
+    public AudioClip charHealSnd;
     public AudioSource audioSource;
 
     public void Start()
@@ -137,6 +138,7 @@ public class BattleStart : MonoBehaviour
         {
             playerPower = 5 + varCheck.upgAtk;
             playerAnimator.SetTrigger("playerHeal"); //Triggers Player Heal Animation
+            audioSource.PlayOneShot(charHealSnd);
             StartCoroutine(WaitForEnemyTurn());
             playerHealth += (10 + varCheck.upgHeal);
             actionText.text = "Player Healed for " + (10 + varCheck.upgHeal);
@@ -200,6 +202,7 @@ public class BattleStart : MonoBehaviour
         enemyAnimator.SetTrigger("enemyHeal");
         enemyHealth += 10;
         enemyHealthText.text = enemyHealth.ToString() + "/" + enemyMaxHealth.ToString();
+        audioSource.PlayOneShot(charHealSnd);
         StartCoroutine(WaitForPlayerTurn());
         enemyMana -= 1;
         actionText.text = "Enemy Healed for 5";
