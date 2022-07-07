@@ -34,6 +34,7 @@ public class BattleStart : MonoBehaviour
     public Text buttonHealText;
 
     private VariableCheck varCheck;
+    private DontDestroy music;
 
     public Animator playerAnimator;
     public Animator enemyAnimator;
@@ -237,8 +238,7 @@ public class BattleStart : MonoBehaviour
         print("Game Lost!");
         actionText.text = "Game Lost at Level " + varCheck.sceneNum.ToString();
         Debug.Log("Enemy Health: " + enemyHealth);
-        audioSource.PlayOneShot(playerDeathSnd);
-        varCheck.LoseSound();
+        audioSource.PlayOneShot(playerDeathSnd);;
         this.enabled = false;
         StartCoroutine(WaitForGameOver());
     }
@@ -251,6 +251,8 @@ public class BattleStart : MonoBehaviour
         Debug.Log("Player Health: " + playerHealth);
         audioSource.PlayOneShot(enemyDeathSnd);
         this.enabled = false;
+        StartCoroutine(WaitForWinCondition());
+
 
         if (varCheck.sceneNum % 2 == 0)
         {
@@ -266,6 +268,7 @@ public class BattleStart : MonoBehaviour
     private IEnumerator WaitForGameOver()
     {
         yield return new WaitForSeconds(1);
+        varCheck.LoseSound();
         varCheck.InitializeVariables();
         varCheck.SavePlayer();
         SceneManager.LoadScene("GameOver");
@@ -278,6 +281,12 @@ public class BattleStart : MonoBehaviour
         {
             PlayerTurn();
         }
+    }
+
+    private IEnumerator WaitForWinCondition()
+    {
+        yield return new WaitForSeconds(1);
+        varCheck.WinSound();
     }
 
     private IEnumerator WaitForEnemyTurn()

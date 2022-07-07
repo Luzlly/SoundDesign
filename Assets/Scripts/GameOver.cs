@@ -17,6 +17,7 @@ public class GameOver : MonoBehaviour
 
     public void RestartGame()
     {
+        varCheck.ButtonSound();
         SceneManager.LoadScene("Battle");
         Debug.Log("Resetting Game");
     }
@@ -29,6 +30,7 @@ public class GameOver : MonoBehaviour
 
     public void QuitGame()
     {
+        varCheck.ButtonSound();
         Application.Quit();
         Debug.Log("Quitting Game");
     }

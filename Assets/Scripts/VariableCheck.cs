@@ -15,7 +15,8 @@ public class VariableCheck : MonoBehaviour
 
     public AudioClip upgradeSnd;
     public AudioClip loseSnd;
-    //public AudioClip winSnd;
+    public AudioClip winSnd;
+    public AudioClip buttonSnd;
     public AudioSource audioSource;
 
     // Start is called before the first frame update
@@ -31,7 +32,7 @@ public class VariableCheck : MonoBehaviour
 
     public void WinSound()
     {
-       //audioSource.PlayOneShot(winSnd);
+       audioSource.PlayOneShot(winSnd);
     }
 
     public void InitializeVariables()
@@ -55,7 +56,16 @@ public class VariableCheck : MonoBehaviour
         {
             audioSource.PlayOneShot(upgradeSnd, 0.7F);
         }
+        else
+        {
+            ButtonSound();
+        }
         SceneManager.LoadScene("Battle");
+    }
+
+    public void ButtonSound()
+    {
+        audioSource.PlayOneShot(buttonSnd);
     }
 
     public void Destroy()
