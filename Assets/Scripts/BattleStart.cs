@@ -40,7 +40,8 @@ public class BattleStart : MonoBehaviour
 
     public AudioClip playerAtkSnd;
     public AudioClip enemyAtkSnd;
-    public AudioClip enemydeathSnd;
+    public AudioClip playerDeathSnd;
+    public AudioClip enemyDeathSnd;
     public AudioSource audioSource;
 
     public void Start()
@@ -233,7 +234,7 @@ public class BattleStart : MonoBehaviour
         print("Game Lost!");
         actionText.text = "Game Lost at Level " + varCheck.sceneNum.ToString();
         Debug.Log("Enemy Health: " + enemyHealth);
-        //audioSource.PlayOneShot(deathSnd);
+        audioSource.PlayOneShot(playerDeathSnd);
         varCheck.LoseSound();
         this.enabled = false;
         StartCoroutine(WaitForGameOver());
@@ -245,7 +246,7 @@ public class BattleStart : MonoBehaviour
         print("Fight Won!");
         actionText.text = "Fight Won";
         Debug.Log("Player Health: " + playerHealth);
-        audioSource.PlayOneShot(enemydeathSnd);
+        audioSource.PlayOneShot(enemyDeathSnd);
         this.enabled = false;
 
         if (varCheck.sceneNum % 2 == 0)
