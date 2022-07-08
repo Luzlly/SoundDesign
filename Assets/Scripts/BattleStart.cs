@@ -269,6 +269,11 @@ public class BattleStart : MonoBehaviour
         varCheck.sceneNum++;
     }
 
+    public void ButtonSound()
+    {
+        varCheck.ButtonSound();
+    }
+
     private IEnumerator WaitForGameOver()
     {
         yield return new WaitForSeconds(1);
