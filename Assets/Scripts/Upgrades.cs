@@ -9,11 +9,15 @@ public class Upgrades : MonoBehaviour
 {
     
     private VariableCheck varCheck;
+    private DontDestroy music;
     public Text bottomText;
 
     public void Start()
     {
         varCheck = GameObject.Find("Variables").GetComponent<VariableCheck>();
+        music = GameObject.Find("Music").GetComponent<DontDestroy>();
+
+        music.LowerVolume();
     }
 
     public void MaxHealth()
